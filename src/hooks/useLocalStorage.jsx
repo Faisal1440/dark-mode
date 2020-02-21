@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const useLocalstorage = (key, initialValue) => {
 
-  const [setValue, setSetValue] = useState(() => {
+  const [myValue, setStoredValue] = useState(() => {
 
     const item = window.localStorage.getItem(key);
         if
@@ -18,7 +18,7 @@ const useLocalstorage = (key, initialValue) => {
     window.localStorage.setItem(key, JSON.stringify(value));
   };
 
-  return [setValue];
+  return [myValue, setValue];
 };
 
 export default useLocalstorage;
